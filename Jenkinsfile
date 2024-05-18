@@ -77,4 +77,3 @@ env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: 
           }
        }
     }
-}
