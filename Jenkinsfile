@@ -26,7 +26,6 @@ pipeline {
             sshagent([credential]) {
                 sh '''ssh -o StrictHostKeyChecking=no ${server} << EOF
                 cd ${directory}
-                docker compose up -d database
                 docker build -t ${image}:${tag}
                 exit
                 EOF'''
@@ -74,7 +73,8 @@ pipeline {
          steps {
             discordSend description: "backend-team1 notify", footer: "team1 notify", link:
 env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/1240153059674423326/XjUW5UpIS4XJoCmyK-6amPN7Ap3H_cfgKf2L2-SpsHmGv1fx3g-Kr6Xg0BnWYeVP_ZYB"
-           } 
-        }
+             } 
+          }
+       }
     }
 }
