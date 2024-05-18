@@ -26,7 +26,7 @@ pipeline {
             sshagent([credential]) {
                 sh '''ssh -o StrictHostKeyChecking=no ${server} << EOF
                 cd ${directory}
-                docker build -t ${image}:${tag}
+                docker build -t ${image}:${tag} .
                 exit
                 EOF'''
                }
