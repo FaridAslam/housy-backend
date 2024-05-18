@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment{
-       credential = 'sshkeyfarid'
+       credential = 'vm'
        server = 'farid18@103.127.134.82'
        directory = '/home/farid18/housy-backend'
        branch = 'main'
